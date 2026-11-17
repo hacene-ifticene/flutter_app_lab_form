@@ -25,7 +25,12 @@ class _InscriptionState extends State<Inscription> {
                 labelText: 'Email',
                 hintText: 'Saisir votre email',
               ),
-              validator: (value) {}, 
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Ce champ est obligatoire';
+                }
+                return null;
+              }, 
             ),
             SizedBox(height: 20),
             TextFormField(
@@ -34,7 +39,12 @@ class _InscriptionState extends State<Inscription> {
                 labelText: 'Password',
               ),
               obscureText: true,
-              validator: (value) {},
+              validator: (value) {
+                if (value == null || value.length < 8) { 
+                return 'Le mot de passe doit contenir au moin 8 caractéres';
+              }
+              return null;
+              }
             ),
             ElevatedButton(
               onPressed: () {},
