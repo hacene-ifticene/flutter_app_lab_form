@@ -5,13 +5,21 @@ class Inscription extends StatefulWidget {
 
   @override
   State<Inscription> createState() => _InscriptionState();
-
 }
 
 class _InscriptionState extends State<Inscription> {
-
+  final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar : AppBar(
+        title: const Text('Inscription'),
+      ),
+      body : Form(
+        key: _formKey,
+        child: Column(
+          children: [],),
+      )
+    );
   }
 }
