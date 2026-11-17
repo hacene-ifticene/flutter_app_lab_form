@@ -26,7 +26,7 @@ class _InscriptionState extends State<Inscription> {
                 hintText: 'Saisir votre email',
               ),
               validator: (value) {
-                if (value == null || value.isEmpty) {
+                if (value == null || !value.contains('@')) {
                   return 'Ce champ est obligatoire';
                 }
                 return null;
@@ -47,7 +47,12 @@ class _InscriptionState extends State<Inscription> {
               }
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                if (_formKey.currentState!.validate()) {
+                  print('Inscription reussie.');
+                  _formKey.currentState!.reset();
+                }
+              },
               child: Text("Inscription")),
           ],),
       )
