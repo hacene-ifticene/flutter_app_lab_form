@@ -54,7 +54,9 @@ class _InscriptionState extends State<Inscription> {
             ElevatedButton(
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
-                 print('inscription réussie : ${_emailController.text}');
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text('${_emailController.text} est inscrit avec succès!')),
+                  );
                  _formKey.currentState!.reset();
                 }
               },
