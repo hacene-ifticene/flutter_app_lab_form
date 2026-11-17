@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart'`
+import 'package:flutter/material.dart';
 
 class Inscription extends StatefulWidget {
   const Inscription({super.key});
 
   @override
-  state<Inscription> createState() => _InscriptionState();
+  State<Inscription> createState() => _InscriptionState();
 
 }
 
