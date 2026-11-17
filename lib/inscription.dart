@@ -18,7 +18,28 @@ class _InscriptionState extends State<Inscription> {
       body : Form(
         key: _formKey,
         child: Column(
-          children: [],),
+          children: [
+            TextFormField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: 'Email',
+                hintText: 'Saisir votre email',
+              ),
+              validator: (value) {}, 
+            ),
+            SizedBox(height: 20),
+            TextFormField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: 'Password',
+              ),
+              obscureText: true,
+              validator: (value) {},
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              child: Text("Inscription")),
+          ],),
       )
     );
   }
